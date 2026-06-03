@@ -33,22 +33,22 @@ git clone [https://github.com/YOUR_GITHUB_USERNAME/sample-app.git](https://githu
 cd sample-app
 
 
-#2. Ensure K3s is running and configured:
-Verify your local Kubernetes context is set properly.
+## 2. Ensure K3s is running and configured:
+* **Verify your local Kubernetes context is set properly.
 
 Bash
 kubectl get nodes
-#3. Apply the Kubernetes manifest:
-This will spin up a Deployment (1 replica) and expose it via a NodePort Service.
+## 3. Apply the Kubernetes manifest:
+* **This will spin up a Deployment (1 replica) and expose it via a NodePort Service.
 
 Bash
 kubectl apply -f deploy.yml
 #4. Access the Application:
-Retrieve the assigned NodePort:
+* **Retrieve the assigned NodePort:
 
 Bash
 kubectl get svc sample-app-service
 Navigate to http://<YOUR_NODE_IP>:<ASSIGNED_PORT> in your web browser.
 
-#🔒 Security Remediation History
+## 🔒 Security Remediation History
 [CVE-2026-6732] libxml2 Vulnerability: Caught by Trivy automated scan during the build phase. Remediated by injecting RUN apk update && apk upgrade into the Dockerfile to pull the patched 2.13.9-r1 library before deployment.
